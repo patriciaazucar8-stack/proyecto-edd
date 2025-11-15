@@ -27,7 +27,7 @@ void pantallaInicio() {
 
     // Subtítulo
     printf("%s\n", CIAN);
-    printf("      Un juego de batallas elementales - Fuego  Agua  Hielo\n");
+    printf("      Un juego de batallas elementales - Fuego  Agua  Planta\n");
     printf("%s\n", RESET);
 
     // Marco inferior
@@ -41,11 +41,11 @@ void pantallaInicio() {
 
 int menuPrincipal() {
     int opcion;
-    printf("\n%s================== MENÚ PRINCIPAL ==================%s\n", AZUL, RESET);
-    printf("%s 1)%s Jugar\n", VERDE, RESET);
+    printf("\n%s================== MENÚ PRINCIPAL ==================%s\n", MAGENTA, RESET);
+    printf("%s 1)%s Jugar\n", AZUL, RESET);
     printf("%s 2)%s Ver Historial\n", CIAN, RESET);
     printf("%s 3)%s Salir\n", ROJO, RESET);
-    printf("%s====================================================%s\n", AZUL, RESET);
+    printf("%s====================================================%s\n", MAGENTA, RESET);
     printf("Elige una opción: ");
 
     if (scanf("%d", &opcion) != 1) {
@@ -69,9 +69,9 @@ int menuSeleccion() {
     printf("  %s[5]%s Flareon     (Fuego)\n", AMARILLO, RESET);
     printf("  %s[6]%s Chimchar    (Fuego)\n\n", AMARILLO, RESET);
 
-    printf("  %s[7]%s Articuno    (Hielo)\n", AMARILLO, RESET);
-    printf("  %s[8]%s Glaceon     (Hielo)\n", AMARILLO, RESET);
-    printf("  %s[9]%s Seel        (Hielo)\n\n", AMARILLO, RESET);
+    printf("  %s[7]%s Bulbasaur   (Planta)\n", AMARILLO, RESET);
+    printf("  %s[8]%s Leafeon     (Planta)\n", AMARILLO, RESET);
+    printf("  %s[9]%s Turtwig     (Planta)\n\n", AMARILLO, RESET);
 
     printf("Ingresa el número (1-9): ");
     if (scanf("%d", &opcion) != 1) {
@@ -114,7 +114,7 @@ void confirmarSeleccion(const char* nombre) {
 const char* colorDelTipo(const char tipo[]) {
     if(strcmp(tipo, "agua") == 0) return CIAN;
     if(strcmp(tipo, "fuego") == 0) return ROJO;
-    return AZUL; // hielo -> azul
+    return VERDE; // planta -> verde
 }
 
 void aparecerPokemon(const char* nombre, const char* color) {
