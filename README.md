@@ -17,14 +17,6 @@ proyecto edd/
 └── README.md       # Este archivo
 ```
 
-## Características Implementadas
-
-### ✅ Mejoras Recientes
-
-1. **Movimientos sin duplicados**: Los Pokémon ahora reciben 4 movimientos únicos (sin repetición)
-2. **Código modular**: Separado en módulos independientes para mejor organización
-3. **Selección aleatoria corregida**: El enemigo se selecciona con distribución uniforme
-
 ### 🎮 Funcionalidades
 
 - 9 Pokémon disponibles (3 por tipo: Agua, Fuego, Planta)
@@ -33,6 +25,7 @@ proyecto edd/
 - Animaciones visuales con colores
 - Barras de HP animadas
 - Combate por turnos
+- Historial de partidas con opción de filtro por jugador
 
 ## Compilación
 
@@ -88,6 +81,7 @@ gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c
 - **Planta** es fuerte contra **Agua** (×1.5 daño)
 
 Las relaciones inversas causan × 0.75 daño.
+Ataques a Pokémon del mismo tipo causan × 1.0 daño.
 
 ## Mejoras Futuras Sugeridas
 
@@ -101,11 +95,9 @@ Las relaciones inversas causan × 0.75 daño.
 
 ## Notas de integración
 
-- En la versión inicial del código se utilizó el tipo “hielo”.
-- Posteriormente se ajustó a “planta” para mantener coherencia con el informe académico,
-  donde los tipos oficiales definidos son agua, fuego y planta.
-- Estos cambios reflejan el proceso de integración y corrección realizado en la etapa final,
-  asegurando consistencia entre código y documentación.
+- En la versión inicial se utilizó el tipo “hielo”. Posteriormente se ajustó a “planta” para mantener coherencia con el informe académico.
+- El informe menciona una regla de “desempate”, pero en la implementación práctica no se aplica, ya que el sistema por turnos asegura que siempre haya un ganador.
+- Estos cambios reflejan el proceso de integración y corrección realizado en la etapa final, asegurando consistencia entre código y documentación.
 
 ## Aprendizajes
   
