@@ -29,17 +29,17 @@ Movimiento fuegoPool[10] = {
     {"Ash Storm", 23, "Cenizas abrasadoras caen como una lluvia caliente."}
 };
 
-Movimiento hieloPool[10] = {
-    {"Ice Shard", 25, "Trozos de hielo afilado vuelan hacia el objetivo."},
-    {"Frost Bite", 22, "Un toque helado inmoviliza brevemente al oponente."},
-    {"Crystal Spike", 20, "Cristales fríos se forman y son lanzados."},
-    {"Glacier Slam", 28, "Un golpe pesado con frío profundo."},
-    {"Snow Burst", 18, "Copos densos golpean en ráfagas rápidas."},
-    {"Chill Swipe", 23, "Garras heladas cortan con precisión."},
-    {"Winter Wave", 24, "Una ola gélida recorre el campo de batalla."},
-    {"Polar Beam", 30, "Un rayo congelante atraviesa la distancia."},
-    {"Frozen Dash", 26, "Una embestida cubierta de hielo impacta con fuerza."},
-    {"Shiver Storm", 27, "Un viento glacial sacude el ambiente."}
+Movimiento plantaPool[10] = {
+{"Vine Whip", 25, "Látigos de enredaderas golpean rápidamente al oponente."},
+{"Razor Leaf", 22, "Hojas afiladas vuelan en dirección del enemigo."},
+{"Leaf Blade", 30, "Una hoja brillante realiza un corte extremadamente preciso."},
+{"Solar Beam", 28, "Absorbe luz solar y dispara un potente rayo verde."},
+{"Seed Bomb", 26, "Semillas duras caen sobre el rival con fuerza explosiva."},
+{"Energy Ball", 24, "Una esfera de energía natural impacta con fuerza."},
+{"Giga Drain", 23, "Roba energía del oponente y recupera salud."},
+{"Bullet Seed", 20, "Semillas rápidas y repetidas se disparan como proyectiles."},
+{"Leech Seed", 18, "Una semilla se adhiere al rival y absorbe vitalidad."},
+{"Grass Knot", 21, "La hierba atrapa al oponente y lo hace tropezar."}
 };
 
 // ----------------- Lista de pokémon base -----------------
@@ -51,9 +51,9 @@ Pokemon charizard = {"Charizard", "fuego", {{0}}};
 Pokemon flareon = {"Flareon", "fuego", {{0}}};
 Pokemon chimchar = {"Chimchar", "fuego", {{0}}};
 
-Pokemon articuno = {"Articuno", "hielo", {{0}}};
-Pokemon glaceon = {"Glaceon", "hielo", {{0}}};
-Pokemon seel = {"Seel", "hielo", {{0}}};
+Pokemon bulbasaur = {"Bulbasaur", "planta", {{0}}};
+Pokemon leafeon = {"Leafeon", "planta", {{0}}};
+Pokemon turtwig = {"Turtwig", "planta", {{0}}};
 
 // Asigna 4 movimientos aleatorios SIN REPETIR
 void asignarMovimientos(Pokemon *p) {
@@ -62,7 +62,7 @@ void asignarMovimientos(Pokemon *p) {
 
     if(strcmp(p->tipo, "agua") == 0) pool = aguaPool;
     else if(strcmp(p->tipo, "fuego") == 0) pool = fuegoPool;
-    else pool = hieloPool;
+    else pool = plantaPool;
 
     // Array para rastrear índices ya usados
     int usados[10] = {0}; // 0 = no usado, 1 = usado
@@ -90,12 +90,12 @@ Movimiento movimientoMasFuerte(Pokemon p) {
 
 float obtenerMultiplicador(const char atacante[], const char defensor[]) {
     if(strcmp(atacante, "agua") == 0 && strcmp(defensor, "fuego") == 0) return 1.5f;
-    if(strcmp(atacante, "fuego") == 0 && strcmp(defensor, "hielo") == 0) return 1.5f;
-    if(strcmp(atacante, "hielo") == 0 && strcmp(defensor, "agua") == 0) return 1.5f;
+    if(strcmp(atacante, "fuego") == 0 && strcmp(defensor, "planta") == 0) return 1.5f;
+    if(strcmp(atacante, "planta") == 0 && strcmp(defensor, "agua") == 0) return 1.5f;
 
-    if(strcmp(atacante, "agua") == 0 && strcmp(defensor, "hielo") == 0) return 0.5f;
-    if(strcmp(atacante, "fuego") == 0 && strcmp(defensor, "agua") == 0) return 0.5f;
-    if(strcmp(atacante, "hielo") == 0 && strcmp(defensor, "fuego") == 0) return 0.5f;
+    if(strcmp(atacante, "agua") == 0 && strcmp(defensor, "planta") == 0) return 0.75f;
+    if(strcmp(atacante, "fuego") == 0 && strcmp(defensor, "agua") == 0) return 0.75f;
+    if(strcmp(atacante, "planta") == 0 && strcmp(defensor, "fuego") == 0) return 0.75f;
 
     return 1.0f;
 }
@@ -105,7 +105,7 @@ Pokemon obtenerPokemonAleatorio() {
     Pokemon listaPokemon[9] = {
         lapras, vaporeon, piplup,
         charizard, flareon, chimchar,
-        articuno, glaceon, seel
+        bulbasaur, leafeon, turtwig
     };
     
     int indice = rand() % 9;
