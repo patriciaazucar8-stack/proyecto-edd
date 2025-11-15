@@ -10,6 +10,7 @@
 #define CIAN    "\x1b[36m"
 #define AMARILLO "\x1b[33m"
 #define VERDE   "\x1b[32m"
+#define MAGENTA "\x1b[35m"
 
 // ----------------- Funciones de UI -----------------
 void pantallaInicio();
