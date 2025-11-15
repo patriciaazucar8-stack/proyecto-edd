@@ -1,0 +1,53 @@
+==========================================================
+               POKEWAR - INSTRUCCIONES
+==========================================================
+
+MEJORAS IMPLEMENTADAS:
+----------------------
+✓ Movimientos sin duplicados
+✓ Código separado en módulos (pokemon.c, ui.c, combate.c)
+✓ Selección aleatoria del enemigo corregida
+✓ Barra de energía mejorada con:
+  - Indicador de estado (SALUDABLE / HERIDO / CRITICO)
+  - Barra visual más ancha (30 caracteres)
+  - Colores según el estado de salud
+  - Animación suave al recibir daño
+  - Diseño más limpio y organizado
+
+CÓMO COMPILAR:
+--------------
+Abre PowerShell en la carpeta del proyecto y ejecuta:
+
+    gcc -o pokewar.exe main.c pokemon.c ui.c combate.c
+
+CÓMO EJECUTAR:
+--------------
+Después de compilar, ejecuta:
+
+    .\pokewar.exe
+
+CÓMO JUGAR:
+-----------
+1. Selecciona tu Pokémon (opciones 1-9)
+2. El juego asignará un rival aleatorio
+3. En cada turno verás:
+   - Tu Pokémon con su barra de HP
+   - El Pokémon rival con su barra de HP
+   - 4 movimientos disponibles
+4. Elige un movimiento (1-4)
+5. Observa la batalla hasta que un Pokémon sea derrotado
+
+CARACTERÍSTICAS DE LA BARRA DE HP:
+-----------------------------------
+- Verde "SALUDABLE": HP > 50%
+- Amarillo "HERIDO": HP entre 25% y 50%
+- Rojo "CRITICO": HP < 25%
+
+SISTEMA DE TIPOS:
+-----------------
+- Agua vence a Fuego (×1.5 daño)
+- Fuego vence a Hielo (×1.5 daño)
+- Hielo vence a Agua (×1.5 daño)
+
+¡Disfruta el juego!
+==========================================================

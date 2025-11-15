@@ -1,0 +1,14 @@
+# Ignorar ejecutables y binarios
+*.exe
+*.o
+*.out
+
+# Archivos temporales
+*.log
+
+# Carpeta de configuración de VS Code
+.vscode/
+
+# Archivos basura de Windows
+Thumbs.db
+desktop.ini 
