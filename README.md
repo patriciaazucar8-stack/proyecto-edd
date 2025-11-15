@@ -1,4 +1,4 @@
-# POKEWAR
+# # POKEWAR: Pokemon Elemental Duel
 
 Juego de batallas Pokémon por turnos en C.
 
@@ -27,7 +27,7 @@ proyecto edd/
 
 ### 🎮 Funcionalidades
 
-- 9 Pokémon disponibles (3 por tipo: Agua, Fuego, Hielo)
+- 9 Pokémon disponibles (3 por tipo: Agua, Fuego, Planta)
 - Sistema de tipos con ventajas y desventajas
 - 10 movimientos únicos por tipo
 - Animaciones visuales con colores
@@ -84,10 +84,10 @@ gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c
 ## Sistema de Tipos
 
 - **Agua** es fuerte contra **Fuego** (×1.5 daño)
-- **Fuego** es fuerte contra **Hielo** (×1.5 daño)
-- **Hielo** es fuerte contra **Agua** (×1.5 daño)
+- **Fuego** es fuerte contra **Planta** (×1.5 daño)
+- **Planta** es fuerte contra **Agua** (×1.5 daño)
 
-Las relaciones inversas causan ×0.5 daño.
+Las relaciones inversas causan × 0.75 daño.
 
 ## Mejoras Futuras Sugeridas
 
@@ -98,3 +98,18 @@ Las relaciones inversas causan ×0.5 daño.
 - [ ] Múltiples combates/torneos
 - [ ] Guardar y cargar partida
 - [ ] Arte ASCII de los Pokémon
+
+## Notas de integración
+
+- En la versión inicial del código se utilizó el tipo “hielo”.
+- Posteriormente se ajustó a “planta” para mantener coherencia con el informe académico,
+  donde los tipos oficiales definidos son agua, fuego y planta.
+- Estos cambios reflejan el proceso de integración y corrección realizado en la etapa final,
+  asegurando consistencia entre código y documentación.
+
+## Aprendizajes
+  
+- Gran parte del desarrollo inicial se realizó en local y luego se subió la carpeta completa a GitHub para centralizar el trabajo. 
+- A partir de ese momento, los commits reflejan la etapa de integración, ajustes y documentación.  
+- El uso de GitHub nos permitió aprender sobre control de versiones y trazabilidad, convirtiéndose en un aporte adicional al proceso académico del semestre.  
+- Además, nos permitió mejorar la coordinación del equipo y reforzar la importancia de mantener la coherencia entre código e informe.
