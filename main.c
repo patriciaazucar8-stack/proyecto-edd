@@ -47,9 +47,9 @@ int main(void) {
                     case 4: p1 = charizard; break;
                     case 5: p1 = flareon; break;
                     case 6: p1 = chimchar; break;
-                    case 7: p1 = articuno; break;
-                    case 8: p1 = glaceon; break;
-                    case 9: p1 = seel; break;
+                    case 7: p1 = bulbasaur; break;
+                    case 8: p1 = leafeon; break;
+                    case 9: p1 = turtwig; break;
                     default: p1 = lapras; break;
                 }
                 confirmarSeleccion(p1.nombre);
@@ -71,9 +71,9 @@ int main(void) {
                         case 4: p2 = charizard; break;
                         case 5: p2 = flareon; break;
                         case 6: p2 = chimchar; break;
-                        case 7: p2 = articuno; break;
-                        case 8: p2 = glaceon; break;
-                        case 9: p2 = seel; break;
+                        case 7: p2 = bulbasaur; break;
+                        case 8: p2 = leafeon; break;
+                        case 9: p2 = turtwig; break;
                         default: p2 = lapras; break;
                     }
                     asignarMovimientos(&p2);
