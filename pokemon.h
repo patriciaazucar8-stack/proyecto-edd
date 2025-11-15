@@ -10,14 +10,14 @@ typedef struct {
 
 typedef struct {
     char nombre[32];
-    char tipo[10]; // "agua", "fuego", "hielo"
+    char tipo[16]; // "agua", "fuego", "planta"
     Movimiento movimientos[4];
 } Pokemon;
 
 // ----------------- Pools de movimientos -----------------
 extern Movimiento aguaPool[10];
 extern Movimiento fuegoPool[10];
-extern Movimiento hieloPool[10];
+extern Movimiento plantaPool[10];
 
 // ----------------- Pokémon base -----------------
 extern Pokemon lapras;
@@ -26,9 +26,9 @@ extern Pokemon piplup;
 extern Pokemon charizard;
 extern Pokemon flareon;
 extern Pokemon chimchar;
-extern Pokemon articuno;
-extern Pokemon glaceon;
-extern Pokemon seel;
+extern Pokemon bulbasaur;
+extern Pokemon leafeon;
+extern Pokemon turtwig;
 
 // ----------------- Funciones -----------------
 void asignarMovimientos(Pokemon *p);
