@@ -2,9 +2,11 @@
 *.exe
 *.o
 *.out
+pokewar
 
 # Archivos temporales
 *.log
+nul
 
 # Carpeta de configuración de VS Code
 .vscode/
