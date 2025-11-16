@@ -16,7 +16,7 @@ static void cola_init(ColaTurnos *q, int a, int b) {
     q->items[0] = a;
     q->items[1] = b;
     q->head = 0;
-    q->tail = 0; // not used for fixed-size 2
+    q->tail = 0; 
     q->size = 2;
 }
 
@@ -27,9 +27,8 @@ static int cola_pop(ColaTurnos *q) {
 }
 
 static void cola_push_back(ColaTurnos *q, int val) {
-    // push at tail index relative to head
     int idx = (q->head + q->size - 1) % q->size;
-    q->items[idx] = val; // simple rotation; for size 2 this keeps alternancia
+    q->items[idx] = val; 
 }
 
 // Registra en historial si se tiene
@@ -69,11 +68,30 @@ int combate(Jugador jugadores[2], Historial *hist) {
 
         Jugador *J_at = &jugadores[atacante];
         Jugador *J_def = &jugadores[defensor];
-
+        
         // Selección de movimiento para atacante
         Movimiento movAt;
         if (J_at->esCPU) {
-            movAt = movimientoMasFuerte(J_at->pokemon);
+            Movimiento movCPU;
+            if (HP[defensor] < 40) {
+                // Rival débil: 60% probabilidad de usar el más fuerte (rematar)
+                if ((rand() % 100) < 60) {
+                    movCPU = movimientoMasFuerte(J_at->pokemon);
+                } else {
+                    int indice = rand() % 4; // ataque aleatorio
+                    movCPU = J_at -> pokemon.movimientos[indice]; 
+                }
+            } else {
+                // Rival fuerte: 60% probabilidad de usar aleatorio
+                if ((rand() % 100) < 60) {
+                    int indice = rand() % 4;
+                    movCPU = J_at -> pokemon.movimientos[indice];
+                } else {
+                    movCPU = movimientoMasFuerte(J_at->pokemon);
+                }
+            }
+            movAt = movCPU;
+            printf("\nTurno de %s (CPU). Usa %s\n", J_at->nombre, movAt.nombre);
         } else {
             // mostrar opciones y leer elección
             printf("\nTurno de %s. Elige movimiento:\n", J_at->nombre);
@@ -109,7 +127,7 @@ int combate(Jugador jugadores[2], Historial *hist) {
         else animarHP(&HP[1], 200, dano);
 
         if (multAt == 1.5f) printf("%s¡Es súper eficaz!%s\n", VERDE, RESET);
-        else if (multAt == 0.5f) printf("%sNo es muy eficaz...%s\n", AMARILLO, RESET);
+        else if (multAt == 0.75f) printf("%sNo es muy eficaz...%s\n", AMARILLO, RESET);
 
         // comprobar KO
         if (HP[defensor] <= 0) {
