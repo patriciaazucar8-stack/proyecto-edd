@@ -10,7 +10,7 @@ CFLAGS = -Wall -Wextra -std=c99
 TARGET = pokewar
 
 # Archivos objeto
-OBJS = main.o pokemon.o ui.o combate.o
+OBJS = main.o pokemon.o ui.o combate.o historial.o player.o
 
 # Regla principal
 all: $(TARGET)
@@ -20,7 +20,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
 # Compilar main.c
-main.o: main.c pokemon.h ui.h combate.h
+main.o: main.c pokemon.h ui.h combate.h historial.h player.h
 	$(CC) $(CFLAGS) -c main.c
 
 # Compilar pokemon.c
@@ -32,8 +32,16 @@ ui.o: ui.c ui.h pokemon.h
 	$(CC) $(CFLAGS) -c ui.c
 
 # Compilar combate.c
-combate.o: combate.c combate.h pokemon.h ui.h
+combate.o: combate.c combate.h pokemon.h ui.h historial.h
 	$(CC) $(CFLAGS) -c combate.c
+
+# Compilar historial.c
+historial.o: historial.c historial.h player.h
+	$(CC) $(CFLAGS) -c historial.c
+
+# Compilar player.c
+player.o: player.c player.h pokemon.h
+	$(CC) $(CFLAGS) -c player.c
 
 # Limpiar archivos compilados
 clean:
