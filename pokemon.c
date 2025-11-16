@@ -100,14 +100,35 @@ float obtenerMultiplicador(const char atacante[], const char defensor[]) {
     return 1.0f;
 }
 
-// Obtiene un Pokémon aleatorio de cualquier tipo
-Pokemon obtenerPokemonAleatorio() {
+// Obtiene un Pokémon para la CPU:
+//  - 50% probabilidad de elegir uno con ventaja elemental
+//  - 50% probabilidad de elegir uno aleatorio
+Pokemon obtenerPokemonAleatorio(Pokemon jugador) {
     Pokemon listaPokemon[9] = {
         lapras, vaporeon, piplup,
         charizard, flareon, chimchar,
         bulbasaur, leafeon, turtwig
     };
-    
+
+    int prob = rand() % 100;
+    if (prob < 50) {
+        // Buscar todos los Pokémon con ventaja elemental
+        Pokemon candidatos[9];
+        int count = 0;
+        for (int i = 0; i < 9; i++) {
+            float mult = obtenerMultiplicador(listaPokemon[i].tipo, jugador.tipo);
+            if (mult > 1.0f) {
+                candidatos[count++] = listaPokemon[i];
+            }
+        }
+        // Si hay candidatos, elegir uno aleatorio entre ellos
+        if (count > 0) {
+            int indice = rand() % count;
+            return candidatos[indice];
+        }
+    }
+
+    // Si no hay ventaja o toca azar: elegir cualquiera
     int indice = rand() % 9;
     return listaPokemon[indice];
 }
