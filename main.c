@@ -31,7 +31,7 @@ int main(void) {
                     nombre1[strcspn(nombre1, "\n")] = '\0';
                 }
 
-                printf("Ingrese nombre del Jugador 2 (o 'CPU' para jugar contra la máquina): ");
+                printf("Ingrese nombre del Jugador 2 (o 'CPU' para jugar contra la maquina): ");
                 if (fgets(nombre2, sizeof(nombre2), stdin)) {
                     nombre2[strcspn(nombre2, "\n")] = '\0';
                 }
@@ -55,12 +55,18 @@ int main(void) {
                 confirmarSeleccion(p1.nombre);
                 asignarMovimientos(&p1);
 
+                #ifdef _WIN32
+                    system("cls"); 
+                #else
+                    system("clear");
+                #endif
+                
                 // Selección de Pokémon para jugador 2 (si CPU, elegir aleatorio)
                 Pokemon p2;
                 if (strcmp(nombre2, "CPU") == 0 || strcmp(nombre2, "cpu") == 0 || strlen(nombre2) == 0) {
                     p2 = obtenerPokemonAleatorio();
                     asignarMovimientos(&p2);
-                    printf("\nEl rival será CPU con %s (Tipo %s)\n", p2.nombre, p2.tipo);
+                    printf("\nEl rival sera CPU con %s (Tipo %s)\n", p2.nombre, p2.tipo);
                 } else {
                     printf("\nJugador %s, ", nombre2);
                     int e2 = menuSeleccion();
@@ -100,7 +106,7 @@ int main(void) {
                 printf("\nVer Historial:\n");
                 printf("  1) Mostrar todo (ordenado por ID)\n");
                 printf("  2) Filtrar por jugador (nombre)\n");
-                printf("Elija una opción: ");
+                printf("Elija una opcion: ");
                 int s = 0;
                 if (scanf("%d", &s) != 1) {
                     while(getchar() != '\n');
@@ -126,7 +132,7 @@ int main(void) {
                 break;
 
             default:
-                printf("Opción no válida.\n");
+                printf("Opcion no valida.\n");
                 break;
         }
     }
