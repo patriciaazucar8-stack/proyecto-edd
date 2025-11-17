@@ -20,8 +20,10 @@ proyecto edd/
 ├── ui.c # Implementación de la interfaz visual
 ├── combate.h # Definiciones de funciones de combate
 ├── combate.c # Implementación del sistema de combate
-├── historial.c # Gestión de partidas
-├── player.c # Gestión de jugadores
+├── historial.h # Definiciones del historial de partidas
+├── historial.c # Gestión del historial de partidas
+├── player.h # Definiciones para gestión de jugadores
+├── player.c # Implementación del módulo de jugadores
 ├── Makefile # Archivo para compilación automatizada
 └── README.md # Este archivo
 ```
