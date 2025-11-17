@@ -3,6 +3,7 @@
 #include "pokemon.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 // Cola circular simple para índices 0/1 (turnos)
 typedef struct {
