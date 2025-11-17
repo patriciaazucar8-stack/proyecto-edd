@@ -127,7 +127,7 @@ int combate(Jugador jugadores[2], Historial *hist) {
         if (defensor == 0) animarHP(&HP[0], 200, dano);
         else animarHP(&HP[1], 200, dano);
 
-        if (multAt == 1.5f) printf("%s¡Es súper eficaz!%s\n", VERDE, RESET);
+        if (multAt == 1.5f) printf("%s Es super eficaz!%s\n", VERDE, RESET);
         else if (multAt == 0.75f) printf("%sNo es muy eficaz...%s\n", AMARILLO, RESET);
 
         // comprobar KO
