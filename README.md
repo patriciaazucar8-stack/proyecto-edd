@@ -59,13 +59,15 @@ gcc -Wall -Wextra -std=c99 -c main.c
 gcc -Wall -Wextra -std=c99 -c pokemon.c
 gcc -Wall -Wextra -std=c99 -c ui.c
 gcc -Wall -Wextra -std=c99 -c combate.c
-gcc -Wall -Wextra -std=c99 -o pokewar main.o pokemon.o ui.o combate.o
+gcc -Wall -Wextra -std=c99 -c historial.c
+gcc -Wall -Wextra -std=c99 -c player.c
+gcc -Wall -Wextra -std=c99 -o pokewar main.o pokemon.o ui.o combate.o historial.o player.o
 ```
 
 ### Opción 3: Compilación simple (todo en uno)
 
 ```bash
-gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c
+gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c historial.c player.c
 ```
 
 ## Ejecución
