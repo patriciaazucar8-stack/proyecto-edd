@@ -18,7 +18,7 @@ CÓMO COMPILAR:
 --------------
 Abre PowerShell en la carpeta del proyecto y ejecuta:
 
-    gcc -o pokewar.exe main.c pokemon.c ui.c combate.c
+    gcc -o pokewar.exe main.c pokemon.c ui.c combate.c historial.c player.c 
 
 CÓMO EJECUTAR:
 --------------
