@@ -113,8 +113,6 @@ int combate(Jugador jugadores[2], Historial *hist) {
             movAt = J_at->pokemon.movimientos[op-1];
         }
 
-        // Seleccionar movimiento del defensor si es CPU cuando ataque pasado; para el contraataque será otra ronda.
-        Movimiento movDef = movimientoMasFuerte(J_def->pokemon);
 
         float multAt = obtenerMultiplicador(J_at->pokemon.tipo, J_def->pokemon.tipo);
         int dano = (int)(movAt.poder * multAt + 0.5f);
