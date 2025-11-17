@@ -138,6 +138,6 @@ int main(void) {
     }
 
     historial_free(&hist);
-    printf("Gracias por jugar. ¡Hasta luego!\n");
+    printf("Gracias por jugar. Hasta luego!\n");
     return 0;
 }
