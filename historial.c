@@ -77,7 +77,7 @@ static int cmp_partida_id(const void *a, const void *b) {
 
 void historial_print(const Historial *h, const char *filtro) {
     if (!h || !h->buckets) {
-        printf("Historial vacío.\n");
+        printf("Historial vacio.\n");
         return;
     }
 
@@ -89,7 +89,7 @@ void historial_print(const Historial *h, const char *filtro) {
     }
 
     if (total == 0) {
-        printf("Historial vacío.\n");
+        printf("Historial vacio.\n");
         return;
     }
 
