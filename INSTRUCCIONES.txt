@@ -24,8 +24,7 @@ CÓMO EJECUTAR:
 --------------
 Después de compilar, ejecuta:
 
-    .\pokewar.exe
-
+    ./pokewar
 CÓMO JUGAR:
 -----------
 1. Selecciona tu Pokémon (opciones 1-9)
