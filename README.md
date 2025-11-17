@@ -1,6 +1,13 @@
 # # POKEWAR: Pokemon Elemental Duel
-
 Juego de batallas Pokémon por turnos en C.
+
+## Grupo Togepi
+Integrantes:
+- Paula Henriquez.
+- Fernando Maturana.
+- Juan Mercade.
+- Adriano Salinas.
+- Patricia Ulloa.
 
 ## Estructura del Proyecto
 
@@ -105,3 +112,11 @@ Ataques a Pokémon del mismo tipo causan × 1.0 daño.
 - A partir de ese momento, los commits reflejan la etapa de integración, ajustes y documentación.  
 - El uso de GitHub nos permitió aprender sobre control de versiones y trazabilidad, convirtiéndose en un aporte adicional al proceso académico del semestre.  
 - Además, nos permitió mejorar la coordinación del equipo y reforzar la importancia de mantener la coherencia entre código e informe.
+
+
+## Contribuciones
+- Paula Henriquez:
+- Fernando Maturana:
+- Juan Mercade:
+- Adriano Salinas:
+- Patricia Ulloa:
