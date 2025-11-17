@@ -47,7 +47,7 @@ SISTEMA DE TIPOS:
 -----------------
 - Agua vence a Fuego (×1.5 daño)
 - Fuego vence a Hielo (×1.5 daño)
-- Hielo vence a Agua (×1.5 daño)
+- Planta vence a Agua (×1.5 daño)
 
 ¡Disfruta el juego!
 ==========================================================
