@@ -70,12 +70,12 @@ gcc -Wall -Wextra -std=c99 -o pokewar main.o pokemon.o ui.o combate.o historial.
 gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c historial.c player.c
 ```
 
-## Ejecución
+Ejecución
 
 ```bash
 .\pokewar.exe
 ```
-## Opcion 4:
+### Opcion 4:
 Abre PowerShell en la carpeta del proyecto y ejecuta:
 ```bash
     gcc -o pokewar.exe main.c pokemon.c ui.c combate.c historial.c player.c 
