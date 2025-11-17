@@ -43,17 +43,17 @@ Movimiento plantaPool[10] = {
 };
 
 // ----------------- Lista de pokémon base -----------------
-Pokemon lapras = {"Lapras", "agua", {{0}}};
-Pokemon vaporeon = {"Vaporeon", "agua", {{0}}};
-Pokemon piplup = {"Piplup", "agua", {{0}}};
+Pokemon lapras = {"Lapras", "agua", {{"",0,""}}};
+Pokemon vaporeon = {"Vaporeon", "agua", {{"",0,""}}};
+Pokemon piplup = {"Piplup", "agua", {{"",0,""}}};
 
-Pokemon charizard = {"Charizard", "fuego", {{0}}};
-Pokemon flareon = {"Flareon", "fuego", {{0}}};
-Pokemon chimchar = {"Chimchar", "fuego", {{0}}};
+Pokemon charizard = {"Charizard", "fuego", {{"",0,""}}};
+Pokemon flareon = {"Flareon", "fuego", {{"",0,""}}};
+Pokemon chimchar = {"Chimchar", "fuego", {{"",0,""}}};
 
-Pokemon bulbasaur = {"Bulbasaur", "planta", {{0}}};
-Pokemon leafeon = {"Leafeon", "planta", {{0}}};
-Pokemon turtwig = {"Turtwig", "planta", {{0}}};
+Pokemon bulbasaur = {"Bulbasaur", "planta", {{"",0,""}}};
+Pokemon leafeon = {"Leafeon", "planta", {{"",0,""}}};
+Pokemon turtwig = {"Turtwig", "planta", {{"",0,""}}};
 
 // Asigna 4 movimientos aleatorios SIN REPETIR
 void asignarMovimientos(Pokemon *p) {
