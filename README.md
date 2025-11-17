@@ -13,15 +13,17 @@ Integrantes:
 
 ```
 proyecto edd/
-├── main.c          # Archivo principal del programa
-├── pokemon.h       # Definiciones de estructuras y funciones de Pokémon
-├── pokemon.c       # Implementación de lógica de Pokémon
-├── ui.h            # Definiciones de funciones de interfaz de usuario
-├── ui.c            # Implementación de la interfaz visual
-├── combate.h       # Definiciones de funciones de combate
-├── combate.c       # Implementación del sistema de combate
-├── Makefile        # Archivo para compilación automatizada
-└── README.md       # Este archivo
+├── main.c # Archivo principal del programa
+├── pokemon.h # Definiciones de estructuras y funciones de Pokémon
+├── pokemon.c # Implementación de lógica de Pokémon
+├── ui.h # Definiciones de funciones de interfaz de usuario
+├── ui.c # Implementación de la interfaz visual
+├── combate.h # Definiciones de funciones de combate
+├── combate.c # Implementación del sistema de combate
+├── historial.c # Gestión de partidas
+├── player.c # Gestión de jugadores
+├── Makefile # Archivo para compilación automatizada
+└── README.md # Este archivo
 ```
 
 ### 🎮 Funcionalidades
@@ -59,31 +61,25 @@ gcc -Wall -Wextra -std=c99 -c main.c
 gcc -Wall -Wextra -std=c99 -c pokemon.c
 gcc -Wall -Wextra -std=c99 -c ui.c
 gcc -Wall -Wextra -std=c99 -c combate.c
-gcc -Wall -Wextra -std=c99 -c historial.c
-gcc -Wall -Wextra -std=c99 -c player.c
-gcc -Wall -Wextra -std=c99 -o pokewar main.o pokemon.o ui.o combate.o historial.o player.o
+gcc -Wall -Wextra -std=c99 -o pokewar main.o pokemon.o ui.o combate.o
 ```
 
 ### Opción 3: Compilación simple (todo en uno)
 
 ```bash
-gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c historial.c player.c
+gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c
 ```
 
-Ejecución
+## Ejecución
 
 ```bash
 .\pokewar.exe
 ```
-### Opcion 4:
+## Opcion 4:
 Abre PowerShell en la carpeta del proyecto y ejecuta:
-```bash
     gcc -o pokewar.exe main.c pokemon.c ui.c combate.c historial.c player.c 
-```
 Después de compilar, ejecuta:
-```bash
 ./pokewar
-```
 
 ## Cómo Jugar
 
@@ -111,6 +107,14 @@ Ataques a Pokémon del mismo tipo causan × 1.0 daño.
 - [ ] Guardar y cargar partida
 - [ ] Arte ASCII de los Pokémon
 
+## Limitaciones conocidas
+
+- El sistema actualmente soporta solo tres tipos: fuego, agua y planta.
+- Los multiplicadores de ventaja/desventaja son fijos (1.5 y 0.75).
+- La CPU puede repetir elecciones de tipo en partidas largas.
+- No se incluyen estados especiales (quemaduras, drenaje, etc.).
+- Los patrones de ventaja elemental pueden volverse predecibles.
+
 ## Notas de integración
 
 - En la versión inicial se utilizó el tipo “hielo”. Posteriormente se ajustó a “planta” para mantener coherencia con el informe académico.
@@ -126,8 +130,9 @@ Ataques a Pokémon del mismo tipo causan × 1.0 daño.
 
 
 ## Contribuciones
-- Paula Henriquez:
-- Fernando Maturana:
-- Juan Mercade:
-- Adriano Salinas:
-- Patricia Ulloa:
+- Paula Henriquez: Encargada del módulo de jugadores, ingreso de datos y apoyo en la documentación. 
+- Fernando Maturana: Responsable del módulo de combate, reglas de daño y desarrollo del flujo de turnos. 
+- Juan Mercade: Integración completa del proyecto, pruebas finales, pulido del sistema y edición del informe académico. 
+- Adriano Salinas: Desarrollo del módulo de Pokémon y movimientos, incluyendo inicialización y estructura elemental. 
+- Patricia Ulloa: Implementación del módulo de historial, almacenamiento de partidas y validación de datos del registro.
+
