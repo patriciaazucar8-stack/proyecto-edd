@@ -101,11 +101,11 @@ int combate(Jugador jugadores[2], Historial *hist) {
             printf("> ");
             if (scanf("%d", &op) != 1) {
                 while(getchar() != '\n');
-                printf("Entrada inválida. Se seleccionará 1 por defecto.\n");
+                printf("Entrada invalida. Se seleccionara 1 por defecto.\n");
                 op = 1;
             }
             while (op < 1 || op > 4) {
-                printf("Opción inválida. Elige 1-4: ");
+                printf("Opcion invalida. Elige 1-4: ");
                 scanf("%d", &op);
             }
             getchar(); // limpiar newline
@@ -122,7 +122,7 @@ int combate(Jugador jugadores[2], Historial *hist) {
         animarAtaque(J_at->pokemon.nombre, movAt.nombre, colorDelTipo(J_at->pokemon.tipo));
         printf("%s%s%s\n", CIAN, movAt.descripcion, RESET);
 
-        printf("\n¡%s pierde %d HP!\n", J_def->pokemon.nombre, dano);
+        printf("\n %s pierde %d HP!\n", J_def->pokemon.nombre, dano);
         if (defensor == 0) animarHP(&HP[0], 200, dano);
         else animarHP(&HP[1], 200, dano);
 
@@ -132,7 +132,7 @@ int combate(Jugador jugadores[2], Historial *hist) {
         // comprobar KO
         if (HP[defensor] <= 0) {
             animacionKO(J_def->pokemon.nombre);
-            printf("%s¡%s gana el combate!%s\n", VERDE, J_at->nombre, RESET);
+            printf("%s %s gana el combate!%s\n", VERDE, J_at->nombre, RESET);
 
             char resultado[128];
             snprintf(resultado, sizeof(resultado), "Ganador: %s (%s)", J_at->nombre, J_at->pokemon.nombre);
