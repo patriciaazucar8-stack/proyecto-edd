@@ -73,6 +73,11 @@ gcc -Wall -Wextra -std=c99 -o pokewar main.c pokemon.c ui.c combate.c
 ```bash
 .\pokewar.exe
 ```
+## Opcion 4:
+Abre PowerShell en la carpeta del proyecto y ejecuta:
+    gcc -o pokewar.exe main.c pokemon.c ui.c combate.c historial.c player.c 
+Después de compilar, ejecuta:
+./pokewar
 
 ## Cómo Jugar
 
