@@ -41,12 +41,12 @@ void pantallaInicio() {
 
 int menuPrincipal() {
     int opcion;
-    printf("\n%s================== MENÚ PRINCIPAL ==================%s\n", MAGENTA, RESET);
+    printf("\n%s================== MENU PRINCIPAL ==================%s\n", MAGENTA, RESET);
     printf("%s 1)%s Jugar\n", AZUL, RESET);
     printf("%s 2)%s Ver Historial\n", CIAN, RESET);
     printf("%s 3)%s Salir\n", ROJO, RESET);
     printf("%s====================================================%s\n", MAGENTA, RESET);
-    printf("Elige una opción: ");
+    printf("Elige una opcion: ");
 
     if (scanf("%d", &opcion) != 1) {
         while (getchar() != '\n');
@@ -59,7 +59,7 @@ int menuPrincipal() {
 
 int menuSeleccion() {
     int opcion;
-    printf("\n%s================= SELECCIONA TU POKÉMON =================%s\n\n", AZUL, RESET);
+    printf("\n%s================= SELECCIONA TU POKEMON =================%s\n\n", AZUL, RESET);
 
     printf("  %s[1]%s Lapras      (Agua)\n", AMARILLO, RESET);
     printf("  %s[2]%s Vaporeon    (Agua)\n", AMARILLO, RESET);
@@ -73,13 +73,13 @@ int menuSeleccion() {
     printf("  %s[8]%s Leafeon     (Planta)\n", AMARILLO, RESET);
     printf("  %s[9]%s Turtwig     (Planta)\n\n", AMARILLO, RESET);
 
-    printf("Ingresa el número (1-9): ");
+    printf("Ingresa el numero (1-9): ");
     if (scanf("%d", &opcion) != 1) {
         while (getchar() != '\n');
         opcion = 1;
     }
     while(opcion < 1 || opcion > 9) {
-        printf("Opción inválida. Intenta nuevamente (1-9): ");
+        printf("Opcion invalida. Intenta nuevamente (1-9): ");
         if (scanf("%d", &opcion) != 1) {
             while (getchar() != '\n');
             opcion = 1;
@@ -128,7 +128,7 @@ void aparecerPokemon(const char* nombre, const char* color) {
             usleep(300000);
         #endif
     }
-    printf("%s¡%s aparece!%s\n\n", color, nombre, RESET);
+    printf("%s %s aparece!%s\n\n", color, nombre, RESET);
 }
 
 void pantallaVS(const char* nombre1, const char* nombre2) {
@@ -231,7 +231,7 @@ void animarHP(int* hp, int hpMax, int dano) {
 }
 
 void animacionKO(const char* nombre) {
-    printf("\n%s está debilitado...\n", nombre);
+    printf("\n%s esta debilitado...\n", nombre);
     for(int i = 0; i < 3; i++){
         printf(".");
         fflush(stdout);
@@ -241,7 +241,7 @@ void animacionKO(const char* nombre) {
             usleep(500000);
         #endif
     }
-    printf("\n\n*** %s ha caído ***\n\n", nombre);
+    printf("\n\n*** %s ha caido ***\n\n", nombre);
 
     #ifdef _WIN32
         Sleep(900);
